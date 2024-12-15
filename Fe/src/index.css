@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    @font-face {
+      font-family: 'Roboto';
+      font-style: extralight;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/Roboto.woff2) format('woff2');
+    }
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  } 
+  @layer utilities {
+    .duration-high {
+      @apply transition-all duration-300 ease-in-out;
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spin {
+    animation: spin 40s linear infinite;
+  }
+  
+  /* smooth scroll*/
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    @apply bg-primary text-white;
+  }
